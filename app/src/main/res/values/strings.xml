@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="no_news_loaded">There are no news matching the query</string>
+    <string name="problem_internet_connection">Cannot connect to server, check your Internet connection.</string>
+</resources>
