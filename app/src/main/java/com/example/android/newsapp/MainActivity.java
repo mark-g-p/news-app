@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      * URL for news data from the Guardian dataset
      */
     private final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?show-fields=headline,trailText,byline&api-key=" + ApiKeys.KEY;
+            "https://content.guardianapis.com/search?q=%22SpaceX%22&show-fields=headline,trailText,byline&api-key=" + ApiKeys.KEY;
     private NewsAdapter adapter;
     private ActivityMainBinding binding;
     private boolean internetConnectionAvailable = false;

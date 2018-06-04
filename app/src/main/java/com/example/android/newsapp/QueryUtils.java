@@ -148,10 +148,8 @@ final class QueryUtils {
         } catch (IOException e) {
             e.printStackTrace();
             Log.e(LOG_TAG, "Error with input stream", e);
-
         }
 
-        // Return the list of articles
         return articles;
     }
     /**
