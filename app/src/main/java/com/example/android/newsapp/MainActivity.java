@@ -62,14 +62,14 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         }
 
         if (internetConnectionAvailable) {
-            binding.list.setEmptyView(binding.emptyView);
+            binding.listView.setEmptyView(binding.emptyView);
             adapter = new NewsAdapter(this, new ArrayList<News>());
-            binding.list.setAdapter(adapter);
+            binding.listView.setAdapter(adapter);
 
             getLoaderManager().initLoader(1, null, this);
 
 //        Open link in browser when list item is pressed
-            binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     News news = (News) parent.getItemAtPosition(position);

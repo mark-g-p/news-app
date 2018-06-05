@@ -41,19 +41,19 @@ class NewsAdapter extends ArrayAdapter<News> {
         News article = getItem(position);
 
         if (article != null) {
-            binding.section.setText(article.getSection());
+            binding.sectionText.setText(article.getSection());
 //                       Change date format
             DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
             try {
                 Date result1 = df1.parse(article.getDate());
                 SimpleDateFormat dateFormatter = new SimpleDateFormat("HH:mm, dd MMM yyyy", Locale.getDefault());
-                binding.date.setText(dateFormatter.format(result1));
+                binding.dateText.setText(dateFormatter.format(result1));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            binding.title.setText(article.getPlace());
+            binding.titleText.setText(article.getPlace());
             binding.trailText.setText(article.getTrail());
-            binding.author.setText(article.getAuthor());
+            binding.authorText.setText(article.getAuthor());
         }
 
         convertView.setTag(binding);
