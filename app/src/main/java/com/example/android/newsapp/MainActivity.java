@@ -28,6 +28,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
      * URL for news data from the Guardian dataset
      */
     private final String GUARDIAN_REQUEST_URL =
-            "https://content.guardianapis.com/search?q=%22SpaceX%22&show-fields=headline,trailText,byline&api-key=" + ApiKeys.KEY;
+            "https://content.guardianapis.com/search?";
     private NewsAdapter adapter;
     private ActivityMainBinding binding;
     private boolean internetConnectionAvailable = false;
@@ -113,6 +114,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @NonNull
     @Override
     public Loader<List<News>> onCreateLoader(int id, @Nullable Bundle args) {
-        return new NewsLoader(this, GUARDIAN_REQUEST_URL);
+
+        // parse breaks apart the URI string that's passed into its parameter
+        Uri baseUri = Uri.parse(GUARDIAN_REQUEST_URL);
+
+        // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        // Append query parameter and its value.
+        uriBuilder.appendQueryParameter("q", "SpaceX");
+        uriBuilder.appendQueryParameter("show-fields", "headline,trailText,byline");
+        uriBuilder.appendQueryParameter("api-key", ApiKeys.KEY);
+        Log.e("TAG", uriBuilder.toString());
+        return new NewsLoader(this, uriBuilder.toString());
     }
 }
