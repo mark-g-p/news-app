@@ -12,48 +12,48 @@
 
         <TextView
             android:id="@+id/section_text"
+            style="@style/normal_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="section"
-            style="@style/normal_text" />
+            tools:text="section" />
 
         <TextView
             android:id="@+id/title_text"
+            style="@style/title"
             app:layout_constraintBottom_toTopOf="@+id/trail_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/section_text"
             app:layout_constraintVertical_bias="1.0"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Long placeholder location that should wrap to no more than 5 lines of text, and should display properly inside the box"
-            style="@style/title" />
+            tools:text="Long placeholder location that should wrap to no more than 5 lines of text, and should display properly inside the box" />
 
         <TextView
             android:id="@+id/date_text"
+            style="@style/normal_text_date"
             app:layout_constraintBottom_toTopOf="@+id/title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toEndOf="@+id/section_text"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="6 Mar, 2010"
-            style="@style/normal_text_date" />
+            tools:text="6 Mar, 2010" />
 
         <TextView
             android:id="@+id/trail_text"
+            style="@style/trail_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title_text"
-            tools:text="Short description of content of the news."
-            style="@style/trail_text" />
+            tools:text="Short description of content of the news." />
 
         <TextView
             android:id="@+id/author_text"
+            style="@style/normal_text_author"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/trail_text"
-            tools:text="Author"
-            style="@style/normal_text_author" />
+            tools:text="Author" />
     </android.support.constraint.ConstraintLayout>
 </layout>

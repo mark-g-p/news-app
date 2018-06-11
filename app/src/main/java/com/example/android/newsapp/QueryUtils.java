@@ -152,6 +152,7 @@ final class QueryUtils {
 
         return articles;
     }
+
     /**
      * Return a String after removing all html tags from it.
      */

@@ -7,6 +7,7 @@ import java.util.List;
 
 class NewsLoader extends AsyncTaskLoader<List<News>> {
     private String[] urls;
+
     NewsLoader(Context context, String... urls) {
         super(context);
         this.urls = urls;
@@ -21,6 +22,7 @@ class NewsLoader extends AsyncTaskLoader<List<News>> {
         // Perform the HTTP request for news data and process the response.
         return QueryUtils.extractArticles(urls[0]);
     }
+
     @Override
     protected void onStartLoading() {
         forceLoad();
